@@ -1,0 +1,35 @@
+/* Estilos para centrar las cajas y estilizar la página */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; /* Fondo gris oscuro */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre las cajas */
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0; /* Fondo gris claro */
+    color: #333; /* Texto en negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.box:hover {
+    background-color: #ccc; /* Efecto hover: gris medio */
+}
