@@ -1,35 +1,212 @@
-/* Estilos para centrar las cajas y estilizar la página */
+/* General Styles */
 body {
     margin: 0;
+    padding: 0;
     height: 100vh;
+    font-family: 'Lora', serif;
+    background: linear-gradient(to right, #e6f7f7, #f0f0f0); /* Example gradient */
+    color: #333; /* Text color */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333; /* Fondo gris oscuro */
-    font-family: Arial, sans-serif;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
     display: flex;
+    width: 80%;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
-    gap: 20px; /* Espacio entre las cajas */
 }
 
-.box {
-    width: 200px;
-    height: 200px;
-    background-color: #e0e0e0; /* Fondo gris claro */
-    color: #333; /* Texto en negro */
+/* Left Section */
+.left-section {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 10px; /* Bordes redondeados */
-    transition: background-color 0.3s ease;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the start */
+    padding-right: 40px;
 }
 
-.box:hover {
-    background-color: #ccc; /* Efecto hover: gris medio */
+/* Title Styling */
+h1 {
+    font-size: 3rem;
+    margin: 0 0 30px 0; /* Space below title */
 }
+
+/* Option Links */
+.option {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 20px; /* Consistent spacing */
+}
+
+.option-title {
+    font-size: 2rem;
+    color: #555;
+}
+
+.option:hover {
+    color: #ff6f61;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #ff6f61;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Vertical Divider */
+.divider {
+    width: 2px;
+    background-color: black;
+    height: 100%;
+    margin: 0 40px;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.description p {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.description:hover p {
+    color: #ff6f61;
+}
+
+/* Badge Section */
+.badge-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align badge to the left */
+    margin-top: 20px; /* Space between options and badge */
+}
+
+.badge-image {
+    width: 100px; /* Increased image size */
+    height: auto;
+    margin-top: 20px; /* Space above the badge image */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .left-section {
+        padding-right: 0;
+    }
+
+    .right-section {
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .option {
+        font-size: 1.5rem;
+    }
+
+    .option-title {
+        font-size: 1.5rem;
+    }
+
+    .description p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .option {
+        font-size: 1.2rem;
+    }
+
+    .option-title {
+        font-size: 1.2rem;
+    }
+
+    .description p {
+        font-size: 1.2rem;
+    }
+}
+
+footer {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+footer p {
+    margin: 0;
+    font-size: 16px; /* Slightly larger font for better readability */
+    text-align: center;
+}
+  
+footer a {
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  footer a:hover svg {
+    fill: #4078c0; /* GitHub icon color on hover */
+  }
+  
+  footer svg {
+    fill: #000; /* Default GitHub icon color */
+    transition: fill 0.3s ease;
+    margin-top: 5px;
+  }
+  
+  main {
+    flex-grow: 1; /* Allows the main content to take up available space */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    footer p {
+      font-size: 14px;
+    }
+    
+    footer svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+.footer {
+    background: linear-gradient(to right, #e6f7f7, #f0f0f0); /* Example gradient */
+}
+
+.footer:hover {
+    color: #ff6f61;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+  
