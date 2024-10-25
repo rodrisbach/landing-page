@@ -1,212 +1,127 @@
-/* General Styles */
-body {
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    font-family: 'Lora', serif;
-    background: linear-gradient(to right, #e6f7f7, #f0f0f0); /* Example gradient */
-    color: #333; /* Text color */
-    display: flex;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Degradado sutil */
+    color: #000; /* Texto en negro */
+    display: grid;
+    grid-template-rows: 1fr auto;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    text-align: center; /* Centrar texto */
+    transition: background-color 1s ease; /* Transición suave de fondo */
+}
+
+body:hover {
+    background-color: #e3f2fd; /* Cambio sutil de color al interactuar */
 }
 
 .container {
-    display: flex;
-    width: 80%;
-    align-items: flex-start;
-    justify-content: center;
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Animación de fade-in */
 }
 
-/* Left Section */
-.left-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items at the start */
-    padding-right: 40px;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
-/* Title Styling */
 h1 {
-    font-size: 3rem;
-    margin: 0 0 30px 0; /* Space below title */
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #000; /* Negro */
 }
 
-/* Option Links */
-.option {
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 20px; /* Consistent spacing */
-}
-
-.option-title {
-    font-size: 2rem;
-    color: #555;
-}
-
-.option:hover {
-    color: #ff6f61;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover {
-    color: #ff6f61;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Vertical Divider */
-.divider {
-    width: 2px;
-    background-color: black;
-    height: 100%;
-    margin: 0 40px;
-}
-
-/* Right Section */
-.right-section {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.description p {
-    font-size: 1.5rem;
-    color: #333;
+.description {
+    font-size: 1.5em;
     line-height: 1.6;
-    margin: 0;
+    margin-bottom: 30px;
+    color: #000; /* Negro */
 }
 
-.description:hover p {
-    color: #ff6f61;
+.links {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Badge Section */
-.badge-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align badge to the left */
-    margin-top: 20px; /* Space between options and badge */
+.links li {
+    margin: 10px 0;
 }
 
-.badge-image {
-    width: 100px; /* Increased image size */
-    height: auto;
-    margin-top: 20px; /* Space above the badge image */
+.links a {
+    font-size: 1.2em;
+    color: #000; /* Negro */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s, transform 0.3s; /* Efectos de hover */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .divider {
-        display: none;
-    }
-
-    .left-section {
-        padding-right: 0;
-    }
-
-    .right-section {
-        margin-top: 20px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .option {
-        font-size: 1.5rem;
-    }
-
-    .option-title {
-        font-size: 1.5rem;
-    }
-
-    .description p {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .option {
-        font-size: 1.2rem;
-    }
-
-    .option-title {
-        font-size: 1.2rem;
-    }
-
-    .description p {
-        font-size: 1.2rem;
-    }
+.links a:hover {
+    color: #007acc; /* Cambia a azul al pasar el cursor */
+    transform: scale(1.1); /* Efecto de agrandar ligeramente */
 }
 
 footer {
+    margin-top: auto;
     padding: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-  
-footer p {
-    margin: 0;
-    font-size: 16px; /* Slightly larger font for better readability */
     text-align: center;
 }
-  
+
 footer a {
-    margin-top: 10px;
     text-decoration: none;
-  }
-  
-  footer a:hover svg {
-    fill: #4078c0; /* GitHub icon color on hover */
-  }
-  
-  footer svg {
-    fill: #000; /* Default GitHub icon color */
-    transition: fill 0.3s ease;
-    margin-top: 5px;
-  }
-  
-  main {
-    flex-grow: 1; /* Allows the main content to take up available space */
-  }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 600px) {
-    footer p {
-      font-size: 14px;
-    }
-    
-    footer svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-.footer {
-    background: linear-gradient(to right, #e6f7f7, #f0f0f0); /* Example gradient */
+    color: #000; /* Negro */
+    font-size: 1.1em;
 }
 
-.footer:hover {
-    color: #ff6f61;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+footer img {
+    width: 20px; /* Tamaño reducido */
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
-  
+
+footer a:hover {
+    color: #007acc; /* Cambia a azul al pasar el cursor */
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #333;
+}
+
+footer p:hover {
+    color: #007acc; /* Cambia a azul al pasar el cursor */
+}
+
+/* Micro-interacción en scroll */
+@media screen and (min-width: 600px) {
+    body {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Cursor personalizado */
+a:hover {
+    cursor: pointer;
+}
+
+/* Para agregar emojis de manera divertida */
+.description {
+    font-size: 1.2em;
+    color: #000;
+}
+
+.description::after {
+    content: " 🚴‍♂️ 💻 📚 ☕"; /* Emojis personalizados */
+}
