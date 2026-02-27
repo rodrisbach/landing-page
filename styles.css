@@ -5,123 +5,151 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Degradado sutil */
-    color: #000; /* Texto en negro */
-    display: grid;
-    grid-template-rows: 1fr auto;
+    background: #0a0e17;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    text-align: center; /* Centrar texto */
-    transition: background-color 1s ease; /* Transición suave de fondo */
-}
-
-body:hover {
-    background-color: #e3f2fd; /* Cambio sutil de color al interactuar */
-}
-
-.container {
-    text-align: center;
-    max-width: 600px;
     padding: 20px;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards; /* Animación de fade-in */
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.terminal {
+    width: 100%;
+    max-width: 700px;
+    background: #0d1117;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.terminal-header {
+    background: #161b22;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #30363d;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red    { background: #ff5f57; }
+.dot.yellow { background: #febc2e; }
+.dot.green  { background: #28c840; }
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85em;
+    color: #8b949e;
+}
+
+.terminal-body {
+    padding: 28px;
+    line-height: 1.8;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.prompt {
+    color: #3fb950;
+    user-select: none;
+}
+
+.command {
+    color: #e6edf3;
+}
+
+.output {
+    margin: 6px 0 24px 0;
 }
 
 h1 {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    color: #000; /* Negro */
+    font-size: 2em;
+    color: #79c0ff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.role {
+    color: #3fb950;
+    font-size: 1em;
+    margin-top: 4px;
 }
 
 .description {
-    font-size: 1.5em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #000; /* Negro */
+    color: #8b949e;
+    line-height: 1.9;
+    max-width: 620px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    border: 1px solid #30363d;
+    color: #79c0ff;
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background: #161b22;
 }
 
 .links {
-    list-style-type: none;
-    padding: 0;
-}
-
-.links li {
-    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .links a {
-    font-size: 1.2em;
-    color: #000; /* Negro */
+    color: #58a6ff;
     text-decoration: none;
-    display: block;
-    padding: 10px;
-    transition: color 0.3s, transform 0.3s; /* Efectos de hover */
+    transition: color 0.2s;
 }
 
 .links a:hover {
-    color: #007acc; /* Cambia a azul al pasar el cursor */
-    transform: scale(1.1); /* Efecto de agrandar ligeramente */
+    color: #79c0ff;
+    text-decoration: underline;
 }
 
-footer {
-    margin-top: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    text-decoration: none;
-    color: #000; /* Negro */
-    font-size: 1.1em;
-}
-
-footer img {
-    width: 20px; /* Tamaño reducido */
-    height: 20px;
+.cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1.1em;
+    background: #3fb950;
     vertical-align: middle;
-    margin-right: 8px;
+    animation: blink 1s step-end infinite;
 }
 
-footer a:hover {
-    color: #007acc; /* Cambia a azul al pasar el cursor */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
 }
 
-footer p {
-    font-size: 0.9em;
-    color: #333;
-}
-
-footer p:hover {
-    color: #007acc; /* Cambia a azul al pasar el cursor */
-}
-
-/* Micro-interacción en scroll */
-@media screen and (min-width: 600px) {
-    body {
-        scroll-behavior: smooth;
+@media (max-width: 600px) {
+    .terminal {
+        border-radius: 6px;
     }
-}
 
-/* Cursor personalizado */
-a:hover {
-    cursor: pointer;
-}
+    .terminal-body {
+        padding: 20px;
+    }
 
-/* Para agregar emojis de manera divertida */
-.description {
-    font-size: 1.2em;
-    color: #000;
-}
-
-.description::after {
-    content: " 🚴‍♂️ 💻 📚 ☕"; /* Emojis personalizados */
+    h1 {
+        font-size: 1.5em;
+    }
 }

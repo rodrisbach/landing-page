@@ -7,25 +7,64 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Rodrigo Schanzenbach</h1>
-        <p class="description">
-            Soy un apasionado de la tecnología, la escritura y el ciclismo. Hay cosas que nunca me faltan, como un libro en mi mesa de luz, alguna carrera en mi calendario, un artículo de tecnología en mi navegador, o las ganas y energía para hacer planes y pasar un buen momento con los que quiero y me quieren. Me encanta ayudar y compartir lo que voy aprendiendo, un día participé en Nerdearla, me gustó y repetí.
-        </p>
-        <nav>
-            <ul class="links">
-                <li><a href="https://www.youtube.com/watch?v=gLxcWcUwuts&list=PLWKaGmnIcud4dvseiBuUDmK0nC_ZWgovU" target="_blank">Charlas and Workshops</a></li>
-                <li><a href="https://rodri-scha.medium.com/" target="_blank">Lo que escribo</a></li>
-                <li><a href="https://www.instagram.com/rodri_scha/" target="_blank">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/in/rodrisbach/" target="_blank">LinkedIn</a></li>
-            </ul>
-        </nav>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">rodrigo@portfolio — ~</span>
+        </div>
+        <div class="terminal-body">
+
+            <div class="line">
+                <span class="prompt">$</span>
+                <span class="command">whoami</span>
+            </div>
+            <div class="output">
+                <h1>Rodrigo Schanzenbach</h1>
+                <p class="role">DevOps Engineer</p>
+            </div>
+
+            <div class="line">
+                <span class="prompt">$</span>
+                <span class="command">cat about.txt</span>
+            </div>
+            <div class="output">
+                <p class="description">Soy un apasionado de la tecnología, la escritura y el ciclismo. Hay cosas que nunca me faltan, como un libro en mi mesa de luz, alguna carrera en mi calendario, un artículo de tecnología en mi navegador, o las ganas y energía para hacer planes y pasar un buen momento con los que quiero y me quieren. Me encanta ayudar y compartir lo que voy aprendiendo, un día participé en Nerdearla, me gustó y repetí.</p>
+            </div>
+
+            <div class="line">
+                <span class="prompt">$</span>
+                <span class="command">skills --list</span>
+            </div>
+            <div class="output skills">
+                <span class="tag">AWS</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Linux</span>
+            </div>
+
+            <div class="line">
+                <span class="prompt">$</span>
+                <span class="command">ls links/</span>
+            </div>
+            <div class="output links">
+                <a href="https://www.youtube.com/watch?v=gLxcWcUwuts&list=PLWKaGmnIcud4dvseiBuUDmK0nC_ZWgovU" target="_blank">charlas-and-workshops/</a>
+                <a href="https://rodri-scha.medium.com/" target="_blank">medium/</a>
+                <a href="https://www.instagram.com/rodri_scha/" target="_blank">instagram/</a>
+                <a href="https://www.linkedin.com/in/rodrisbach/" target="_blank">linkedin/</a>
+                <a href="https://github.com/rodrisbach/landing-page" target="_blank">github/</a>
+            </div>
+
+            <div class="line">
+                <span class="prompt">$</span>
+                <span class="cursor"></span>
+            </div>
+
+        </div>
     </div>
-    <footer>
-        <a href="https://github.com/rodrisbach/landing-page" target="_blank">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
-            GitHub
-        </a>
-    </footer>    
 </body>
 </html>
